@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyString
+  quarterback: MyString
+  pf: 9.99
+  pa: 9.99
+  home: 9.99
+  away: 9.99
+
+two:
+  name: MyString
+  description: MyString
+  quarterback: MyString
+  pf: 9.99
+  pa: 9.99
+  home: 9.99
+  away: 9.99

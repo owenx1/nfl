@@ -5,10 +5,6 @@ Nfl::Application.routes.draw do
 
   get "site/home"
 
-  match '/about' => 'site#about'
-match '/contact' => 'site#contact'
-match '/home' => 'site#home'
-
   resources :teams
 
 

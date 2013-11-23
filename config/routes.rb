@@ -1,4 +1,12 @@
 Nfl::Application.routes.draw do
+  get "site/profile"
+
+  get "site/predictor"
+
+  get "site/leaderboard"
+
+  get "site/admin"
+
   get "site/about"
 
   get "site/contact"
@@ -8,6 +16,11 @@ Nfl::Application.routes.draw do
   match '/about' => 'site#about'
 match '/contact' => 'site#contact'
 match '/home' => 'site#home'
+
+  match '/profile' => 'site#profile'
+match '/predictor' => 'site#predictor'
+match '/leaderboard' => 'site#leaderboard'
+match '/admin' => 'site#admin'
 
   resources :teams
 

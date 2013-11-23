@@ -1,37 +1,40 @@
-<h1>Listing teams</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Quarterback</th>
-    <th>Pf</th>
-    <th>Pa</th>
-    <th>Home</th>
-    <th>Away</th>
-	<th>Image</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<h1>Teams</h1>
+<table class="teamDetails">
 <% @teams.each do |team| %>
-  <tr>
-    <td><%= team.name %></td>
-    <td><%= team.description %></td>
-    <td><%= team.quarterback %></td>
-    <td><%= team.pf %></td>
-    <td><%= team.pa %></td>
-    <td><%= team.home %></td>
-    <td><%= team.away %></td>
-	<td><%= team.image %></td>
-    <td><%= link_to 'Show', team %></td>
-    <td><%= link_to 'Edit', edit_team_path(team) %></td>
-    <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<tr>
+<td>
+<div class="image">
+<%= link_to (image_tag team.image, :style => "height:100px"), team %>
+</div>
+</td>
+<td>
+<div class="name">
+<%= link_to team.name, team %>
+</div>
+<div class="description">
+<%=h team.description %>
+</div>
+<div class="quarterback">
+<%=h team.quarterback %>
+</div>
+<div class="pf">
+<%=h team.pf %>
+</div>
+<div class="pa">
+<%=h team.pa %>
+</div>
+<div class="home">
+<%=h team.home %>
+</div>
+<div class="away">
+<%=h team.away %>
+</div>
+<div class="links">
+<%= link_to 'Edit', edit_team_path(team) %> |
+<%= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete %>
+</div>
+</td>
+</tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Team', new_team_path %>
+<p><%= link_to 'New team', new_team_path %></p>

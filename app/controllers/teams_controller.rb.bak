@@ -1,10 +1,6 @@
 class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.json
-  
-  ##added by owen to ensure admin rights for CRUD
-  before_filter :authenticate_user!
-before_filter :ensure_admin, :only => [:new, :create, :edit, :destroy]
   def index
     @teams = Team.all
 

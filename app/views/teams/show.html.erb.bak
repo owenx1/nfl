@@ -35,6 +35,16 @@
   <%= @team.away %>
 </p>
 
+<p>
+  <b>Image:</b>
+  <%= @team.image %>
+</p>
 
+<% if current_user.admin? %>
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>
+<% end %>
+
+<% if current_user.admin? %>
+<%= link_to 'New Item', new_item_path %>
+<% end %>

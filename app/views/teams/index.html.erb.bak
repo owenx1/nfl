@@ -1,5 +1,5 @@
 <h1>Teams</h1>
-<table class="teamDetails" stlye = "center">
+<table class="teamDetails">
 <% @teams.each do |team| %>
 <tr>
 <td>

@@ -1,5 +1,10 @@
 Nfl::Application.routes.draw do
-  get "site/profile"
+  resources :profiles
+
+
+  devise_for :users
+
+  get "site/myprofile"
 
   get "site/predictor"
 
@@ -13,16 +18,20 @@ Nfl::Application.routes.draw do
 
   get "site/home"
 
-  map.root :controller => "site/home"
+  root :to => 'site#home'
+
+  match '/home' => 'site#home'
 
   match '/about' => 'site#about'
 match '/contact' => 'site#contact'
 match '/home' => 'site#home'
 
-  match '/profile' => 'site#profile'
+  match '/myprofile' => 'profiles#myprofile'
 match '/predictor' => 'site#predictor'
 match '/leaderboard' => 'site#leaderboard'
 match '/admin' => 'site#admin'
+
+match '/myprofile' => 'profiles#myprofile'
 
 
   resources :teams

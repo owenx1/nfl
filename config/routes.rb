@@ -1,4 +1,7 @@
 Nfl::Application.routes.draw do
+  resources :profiles
+
+
   devise_for :users
 
   get "site/profile"
@@ -27,6 +30,8 @@ match '/home' => 'site#home'
 match '/predictor' => 'site#predictor'
 match '/leaderboard' => 'site#leaderboard'
 match '/admin' => 'site#admin'
+
+match '/myprofile' => 'profiles#myprofile'
 
 
   resources :teams

@@ -13,9 +13,17 @@ Nfl::Application.routes.draw do
 
   get "site/home"
 
+  map.root :controller => "site/home"
+
   match '/about' => 'site#about'
 match '/contact' => 'site#contact'
 match '/home' => 'site#home'
+
+  match '/profile' => 'site#profile'
+match '/predictor' => 'site#predictor'
+match '/leaderboard' => 'site#leaderboard'
+match '/admin' => 'site#admin'
+
 
   resources :teams
 

@@ -1,4 +1,6 @@
 Nfl::Application.routes.draw do
+  devise_for :users
+
   get "site/profile"
 
   get "site/predictor"

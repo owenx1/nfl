@@ -21,16 +21,17 @@ class ProfilesController < ApplicationController
     end
   end
 
+
   
   def myprofile
 #profile = Profile.find_by_user_id(current_user.id)
-#if profile.nil?
-#redirect_to "/profiles/new"
-#else
+if profile.nil?
+redirect_to "/profiles/new"
+else
 @user = User.find(current_user.id)
-#@profile = Profile.find_by_user_id(@user.id)
+@profile = Profile.find_by_user_id(@user.id)
 redirect_to "/profiles/#{@profile.id}"
-#end
+end
 end
 
   # GET /profiles/new

@@ -1,0 +1,3 @@
+class Game < ActiveRecord::Base
+  attr_accessible :active, :actualHomeScore, :actualRoadScore, :analysis, :averageHomeScore, :averageRoadScore, :description, :home, :name, :proScore, :road, :week
+end

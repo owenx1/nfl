@@ -1,4 +1,7 @@
 Nfl::Application.routes.draw do
+  resources :games
+
+
   resources :profiles
 
 

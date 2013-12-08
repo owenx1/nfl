@@ -1,0 +1,101 @@
+  <h1>Games</h1>
+<table class="gameDetails">
+<% @games.each do |game| %>
+<tr>
+<td>
+<div class="image" align="center">
+<%= link_to (image_tag game.road.image, :style => "height:150px"), game %>
+</div>
+</td>
+
+<td>
+<div class="versus" valign="center">
+@
+</div>
+</td>
+<td>
+<div class="image" align="center">
+<%= link_to (image_tag game.home.image, :style => "height:150px"), game %>
+</div>
+</td>
+</tr>
+<tr >
+<td colspan=3>
+<div class="details" align="center" >
+<h2><%= game.name %></h2>
+<%= game.description %>
+<h3>Analysis</h3>
+<%= game.analysis %>
+<p>Our expert's prediction: <%= game.proScore %></p>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan=3 align="center">
+<h3>Game Over: Final Score</h3>
+</td>
+</tr>
+<tr>
+<td>
+<p><%= game.home.name %> : <%= game.actualHomeScore %></p>
+</td>
+<td>
+<p>@</p>
+</td>
+<td>
+<p><%= game.road.name %> : <%= game.actualRoadScore %></p>
+</td>
+</tr>
+</table>
+<% end %>
+  
+  
+  
+  
+  
+  
+  
+  <!--
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Home</th>
+    <th>Road</th>
+    <th>Week</th>
+    <th>Active</th>
+    <th>Analysis</th>
+    <th>Proscore</th>
+    <th>Actualhomescore</th>
+    <th>Actualroadscore</th>
+    <th>Averagehomescore</th>
+    <th>Averageroadscore</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @games.each do |game| %>
+  <tr>
+    <td><%= game.name %></td>
+    <td><%= game.description %></td>
+    <td><%= game.home %></td>
+    <td><%= game.road %></td>
+    <td><%= game.week %></td>
+    <td><%= game.active %></td>
+    <td><%= game.analysis %></td>
+    <td><%= game.proScore %></td>
+    <td><%= game.actualHomeScore %></td>
+    <td><%= game.actualRoadScore %></td>
+    <td><%= game.averageHomeScore %></td>
+    <td><%= game.averageRoadScore %></td>
+    <td><%= link_to 'Show', game %></td>
+    <td><%= link_to 'Edit', edit_game_path(game) %></td>
+    <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />-->
+
+
+<%= link_to 'New Game', new_game_path %>

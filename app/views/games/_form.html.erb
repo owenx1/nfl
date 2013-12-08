@@ -1,0 +1,65 @@
+<%= form_for(@game) do |f| %>
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% @game.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :home %><br />
+    <%= f.select :home_id, options_for_select(Team.all.map{|s|[s.name, s.id]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :road %><br />
+    <%= f.select :road_id, options_for_select(Team.all.map{|s|[s.name, s.id]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :week %><br />
+    <%= f.number_field :week %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :analysis %><br />
+    <%= f.text_field :analysis %>
+  </div>
+  <div class="field">
+    <%= f.label :proScore %><br />
+    <%= f.text_field :proScore %>
+  </div>
+  <div class="field">
+    <%= f.label :actualHomeScore %><br />
+    <%= f.number_field :actualHomeScore %>
+  </div>
+  <div class="field">
+    <%= f.label :actualRoadScore %><br />
+    <%= f.number_field :actualRoadScore %>
+  </div>
+  <div class="field">
+    <%= f.label :averageHomeScore %><br />
+    <%= f.number_field :averageHomeScore %>
+  </div>
+  <div class="field">
+    <%= f.label :averageRoadScore %><br />
+    <%= f.number_field :averageRoadScore %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

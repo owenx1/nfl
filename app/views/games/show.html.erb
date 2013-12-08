@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @game.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @game.description %>
+</p>
+
+<p>
+  <b>Home:</b>
+  <%= @game.home %>
+</p>
+
+<p>
+  <b>Road:</b>
+  <%= @game.road %>
+</p>
+
+<p>
+  <b>Week:</b>
+  <%= @game.week %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @game.active %>
+</p>
+
+<p>
+  <b>Analysis:</b>
+  <%= @game.analysis %>
+</p>
+
+<p>
+  <b>Proscore:</b>
+  <%= @game.proScore %>
+</p>
+
+<p>
+  <b>Actualhomescore:</b>
+  <%= @game.actualHomeScore %>
+</p>
+
+<p>
+  <b>Actualroadscore:</b>
+  <%= @game.actualRoadScore %>
+</p>
+
+<p>
+  <b>Averagehomescore:</b>
+  <%= @game.averageHomeScore %>
+</p>
+
+<p>
+  <b>Averageroadscore:</b>
+  <%= @game.averageRoadScore %>
+</p>
+
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>

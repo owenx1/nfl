@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131124195433) do
+ActiveRecord::Schema.define(:version => 20131208162407) do
+
+  create_table "games", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "home_id"
+    t.integer  "road_id"
+    t.integer  "week"
+    t.boolean  "active"
+    t.string   "analysis"
+    t.string   "proScore"
+    t.integer  "actualHomeScore"
+    t.integer  "actualRoadScore"
+    t.integer  "averageHomeScore"
+    t.integer  "averageRoadScore"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "profiles", :force => true do |t|
     t.string   "firstname"

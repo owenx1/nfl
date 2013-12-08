@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyString
+  home: 
+  road: 
+  week: 1
+  active: false
+  analysis: MyString
+  proScore: MyString
+  actualHomeScore: 1
+  actualRoadScore: 1
+  averageHomeScore: 1
+  averageRoadScore: 1
+
+two:
+  name: MyString
+  description: MyString
+  home: 
+  road: 
+  week: 1
+  active: false
+  analysis: MyString
+  proScore: MyString
+  actualHomeScore: 1
+  actualRoadScore: 1
+  averageHomeScore: 1
+  averageRoadScore: 1

@@ -17,7 +17,9 @@
 <li><a href="/home">Home</a></li>
 <li><a href="/teams">Teams</a></li>
 <li><a href="/about">About</a></li>
+            <% if user_signed_in? %>
 <li><a href="/myprofile">Profile</a></li>
+<% end %>
 <li><a href="/predictor">Predictor</a></li>
 <li><a href="/leaderboard">Leaderboard</a></li>
 <li><a href="/contact">Contact Us</a></li>

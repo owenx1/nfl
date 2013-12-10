@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131208162407) do
+ActiveRecord::Schema.define(:version => 20131208192848) do
 
   create_table "games", :force => true do |t|
     t.string   "name"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(:version => 20131208162407) do
     t.integer  "averageRoadScore"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "predictions", :force => true do |t|
+    t.integer  "homePrediction"
+    t.integer  "roadPrediction"
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.boolean  "success"
+    t.integer  "difference"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "profiles", :force => true do |t|

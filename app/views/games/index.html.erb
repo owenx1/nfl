@@ -9,7 +9,7 @@
 </td>
 
 <td>
-<div class="versus" valign="center">
+<div class="versus" valign="center" align="center">
 @
 </div>
 </td>
@@ -26,7 +26,15 @@
 <%= game.description %>
 <h3>Analysis</h3>
 <%= game.analysis %>
-<p>Our expert's prediction: <%= game.proScore %></p>
+<p><b>Our expert's prediction:</b> <%= game.proScore %></p>
+
+
+<p><b>Average User Prediction:</b> <%= game.road.name %> : <%= game.averageRoadScore %> - <%= game.home.name %> : <%= game.averageHomeScore %></p>
+<% if Prediction.find_by_game_id_and_user_id(game.id, current_user.id).nil? %>
+<%=link_to 'Add Your Prediction Now!', new_prediction_path(:id => game.id)%>	
+<% else %>
+	<p style="color: #0000FF; font-size: 15pt"><b>Your prediction: </b><%= game.road.name %> : <%= Prediction.find_by_game_id_and_user_id(game.id, current_user.id).roadPrediction %> - <%= game.home.name %> : <%= Prediction.find_by_game_id_and_user_id(game.id, current_user.id).homePrediction %> </p> 
+<% end   %>
 </div>
 </td>
 </tr>
@@ -39,7 +47,7 @@
 <td>
 <p><%= game.home.name %> : <%= game.actualHomeScore %></p>
 </td>
-<td>
+<td align="center">
 <p>@</p>
 </td>
 <td>

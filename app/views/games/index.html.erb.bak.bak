@@ -30,7 +30,7 @@
 
 
 <p><b>Average User Prediction:</b> <%= game.road.name %> : <%= game.averageRoadScore %> - <%= game.home.name %> : <%= game.averageHomeScore %></p>
-<% if Prediction.find_by_game_id_and_user_id(game.id, current_user.id).nil? == true %>
+<% if Prediction.find_by_game_id_and_user_id(game.id, current_user.id).id.nil? %>
 <%=link_to 'Add Your Prediction Now!', new_prediction_path(:id => game.id)%>	
 <% else %>
 	<p style="color: #0000FF; font-size: 15pt"><b>Your prediction: </b><%= game.road.name %> : <%= Prediction.find_by_game_id_and_user_id(game.id, current_user.id).roadPrediction %> - <%= game.home.name %> : <%= Prediction.find_by_game_id_and_user_id(game.id, current_user.id).homePrediction %> </p> 

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Homeprediction:</b>
+  <%= @prediction.homePrediction %>
+</p>
+
+<p>
+  <b>Roadprediction:</b>
+  <%= @prediction.roadPrediction %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @prediction.user %>
+</p>
+
+<p>
+  <b>Game:</b>
+  <%= @prediction.game %>
+</p>
+
+<p>
+  <b>Success:</b>
+  <%= @prediction.success %>
+</p>
+
+<p>
+  <b>Difference:</b>
+  <%= @prediction.difference %>
+</p>
+
+
+<%= link_to 'Edit', edit_prediction_path(@prediction) %> |
+<%= link_to 'Back', predictions_path %>

@@ -1,0 +1,3 @@
+class Prediction < ActiveRecord::Base
+  attr_accessible :difference, :game, :homePrediction, :roadPrediction, :success, :user
+end

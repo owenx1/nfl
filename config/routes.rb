@@ -1,4 +1,7 @@
 Nfl::Application.routes.draw do
+  resources :predictions
+
+
   resources :games
 
 

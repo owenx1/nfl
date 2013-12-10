@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  homePrediction: 1
+  roadPrediction: 1
+  user: 
+  game: 
+  success: false
+  difference: 1
+
+two:
+  homePrediction: 1
+  roadPrediction: 1
+  user: 
+  game: 
+  success: false
+  difference: 1

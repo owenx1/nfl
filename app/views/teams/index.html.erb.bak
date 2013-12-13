@@ -30,11 +30,15 @@
 <%=h team.away %>
 </div>
 <div class="links">
+<% if current_user.admin? %>
 <%= link_to 'Edit', edit_team_path(team) %> |
 <%= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete %>
+<% end %>
 </div>
 </td>
 </tr>
 <% end %>
 </table>
+<% if current_user.admin? %>
 <p><%= link_to 'New team', new_team_path %></p>
+<% end %>

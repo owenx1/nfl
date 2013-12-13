@@ -1,0 +1,9 @@
+id,name,description,quarterback,pf,pa,home,away,created_at,updated_at,image,wins,losses,sos,streak
+1,New England Patriots,The Biggest Team in Boston MA,Tom Brady,27.0,22.0,7.0,3.0,2013-11-23 20:59:23 UTC,2013-12-13 23:29:36 UTC,patriots.jpg,10,3,0.508,3
+2,New York Jets,One of NY's finest,Geno Smith,17.0,26.0,5.0,1.0,2013-11-23 21:00:19 UTC,2013-12-13 23:31:33 UTC,jets.jpg,6,7,0.496,1
+3,Miami Dolphins,Tannehill's boys,Ryan Tannehill,22.0,21.0,3.0,4.0,2013-11-23 23:29:24 UTC,2013-12-13 23:33:34 UTC,dolphins.jpg,7,6,0.52,2
+4,Buffallo,The Upstate New York Heroes,EJ Manuel,21.0,26.0,3.0,1.0,2013-12-01 19:58:39 UTC,2013-12-13 23:35:27 UTC,bills.jpg,4,9,0.473,0
+5,Baltimore Ravens,The Reigning Superbowl Champs,Joe Flacco,21.0,20.0,6.0,1.0,2013-12-01 20:05:10 UTC,2013-12-13 23:37:12 UTC,ravens.jpg,7,6,0.535,3
+6,Pittsbugh Steelers,Operators of the Steel Curtain,Ben Roethlisberger,22.0,24.0,3.0,2.0,2013-12-01 20:07:39 UTC,2013-12-13 23:38:46 UTC,steelers.jpg,5,8,0.496,0
+7,Cleveland Browns,The always struggling Dawg Pound,Jason Campbell,20.0,25.0,3.0,1.0,2013-12-01 20:09:11 UTC,2013-12-13 23:40:45 UTC,browns.jpg,4,9,0.492,0
+8,Cincinati Bengals,Ohio's new grest hope,Andy Dalton,26.0,19.0,6.0,3.0,2013-12-01 20:10:24 UTC,2013-12-13 23:42:19 UTC,bengals.jpg,9,4,0.508,3

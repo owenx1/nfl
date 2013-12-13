@@ -11,6 +11,7 @@ before_filter :ensure_admin, :only => [:new, :create, :edit, :destroy]
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @teams }
+	  format.csv { send_data Team.to_csv }
     end
   end
 

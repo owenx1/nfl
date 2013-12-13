@@ -12,22 +12,25 @@
 <%= link_to team.name, team %>
 </div>
 <div class="description">
+<%=h team.wins %> - <%=h team.losses %>
+</div>
+<div class="description">
 <%=h team.description %>
 </div>
 <div class="quarterback">
-<%=h team.quarterback %>
+QB1: <%=h team.quarterback %>
 </div>
 <div class="pf">
-<%=h team.pf %>
+Points per game: <%=h team.pf %>
 </div>
 <div class="pa">
-<%=h team.pa %>
+Points allowed per game: <%=h team.pa %>
 </div>
 <div class="home">
-<%=h team.home %>
+Home Wins: <%=h team.home %>
 </div>
 <div class="away">
-<%=h team.away %>
+Road Wins: <%=h team.away %>
 </div>
 <div class="links">
 <% if current_user.admin? %>

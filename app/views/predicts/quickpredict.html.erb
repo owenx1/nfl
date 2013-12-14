@@ -1,0 +1,15 @@
+<h1>Enter the teams to see prediction</h1>
+<p></p>
+<%= form_tag "/validate" do %>
+<table>
+<tr><td>
+<%= select_tag :search_string_1, options_for_select(Team.all.map{|s|[s.name]}) %>
+</td>
+<td>
+<p>@</p>
+</td>
+<td>
+<%= select_tag :search_string_2, options_for_select(Team.all.map{|s|[s.name]}) %>
+</td></tr></table>
+<%= submit_tag "Search" %>
+<% end %>

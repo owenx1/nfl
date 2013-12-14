@@ -1,0 +1,25 @@
+<%= form_for(@predict) do |f| %>
+  <% if @predict.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@predict.errors.count, "error") %> prohibited this predict from being saved:</h2>
+
+      <ul>
+      <% @predict.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="field">
+  <%= f.label :team1 %><br />
+  <%= f.select :team1_id, options_for_select(Team.all.map{|s|[s.name, s.id]}) %>
+</div>
+  <div class="field">
+  <%= f.label :team2 %><br />
+  <%= f.select :team2_id, options_for_select(Team.all.map{|s|[s.name, s.id]}) %>
+</div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

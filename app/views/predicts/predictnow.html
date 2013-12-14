@@ -1,0 +1,16 @@
+
+<%= @input1 %> @ <%= @input2 %>  results in: <br/><p><%= @result %></p>
+<p>Why not try agian?</p>
+<%= form_tag "/validate" do %>
+<table>
+<tr><td>
+<%= select_tag :search_string_1, options_for_select(Team.all.map{|s|[s.name]}) %>
+</td>
+<td>
+<p>@</p>
+</td>
+<td>
+<%= select_tag :search_string_2, options_for_select(Team.all.map{|s|[s.name]}) %>
+</td></tr></table>
+<%= submit_tag "Predict Now!" %>
+<% end %>

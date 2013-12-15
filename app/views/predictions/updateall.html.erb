@@ -1,1 +1,6 @@
-done
+<p>All user predictions have been updated to reflect success rate</p>
+<h3>Summary</h3>
+<% Prediction.all.each do |prediction|%>
+<p>Prediction id: <%= prediction.id%> |  successful prediction: <%= prediction.success%> | off by : <%= prediction.difference%></p>
+<% end %>
+<a href="/admin">Back To Admin Screen</a>

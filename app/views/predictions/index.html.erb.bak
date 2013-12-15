@@ -17,14 +17,14 @@
   <tr>
     <td><%= prediction.homePrediction %></td>
     <td><%= prediction.roadPrediction %></td>
-    <td><%= prediction.user.firstName %></td>
+    <td><%= prediction.user.email %></td>
     <td><%= prediction.game.name %></td>
     <td><%= prediction.success %></td>
     <td><%= prediction.difference %></td>
   </tr>
   <tr>
-    <td><%= link_to 'Show', prediction %></td>
-    <td><%= link_to 'Edit', edit_prediction_path(prediction) %></td>
+    <!--<td><%= link_to 'Show', prediction %></td>
+    <td><%= link_to 'Edit', edit_prediction_path(prediction) %></td>-->
     <td><%= link_to 'Destroy', prediction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
   <tr></tr>
@@ -33,4 +33,4 @@
 
 <br />
 
-<%= link_to 'New Prediction', new_prediction_path %>
+<!--<%= link_to 'New Prediction', new_prediction_path %>-->

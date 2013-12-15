@@ -24,8 +24,8 @@
     <%= f.text_field :dob %>
   </div>
   <div class="field">
-    <%= f.label :info %><br />
-    <%= f.text_field :info %>
+    <%= f.label :about %><br />
+    <%= f.text_field :about %>
   </div>
   <div class="field">
     <%= f.label :rank %><br />

@@ -6,7 +6,6 @@
 <tr>
 	<td>Rank</td>
 	<td>Name</td>
-	<td>Contact</td>
 	<td>No. Of Correct Predictions</td>
 	<td>Average margin of error</td>
 </tr>
@@ -15,7 +14,6 @@
 	<tr>
         <td><%= rank %></td>
 		<td><%= profile.firstname %> <%= profile.lastname %> </td>
-		<td><%= User.find_by_id(profile.user_id).email %></td>
 		<td align="center"><%= Prediction.count(:success, :conditions => ['user_id = ' + profile.user_id.to_s + ' and success = 1' ]) %></td>
 		<td align="center"><%= Prediction.sum(:difference, :conditions => ['user_id = ' + profile.user_id.to_s ]) %></td>
       </tr>

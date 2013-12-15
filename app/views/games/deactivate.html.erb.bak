@@ -1,0 +1,5 @@
+<p>All games have been deactivated</p>
+<% Game.all.each do |game| %>
+<p><%= game.name%></p>
+<% end %>
+<a href="/admin">Back To Admin Screen</a>

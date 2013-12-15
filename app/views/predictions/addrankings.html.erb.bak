@@ -4,4 +4,3 @@
 <% Profile.all.each do |profile| %>
 <p>User ID: <%= profile.user_id %> | New Ranking Score: <%= profile.rank %> </p>
 <% end %>
-<a href="/admin">Back To Admin Screen</a>

@@ -28,21 +28,35 @@
 <%= game.analysis %>
 <p><b>Our expert's prediction:</b> <%= game.proScore %></p>
 
-
+<% game.averageHomeScore = Prediction.average(:homePrediction, :conditions => ['game_id = ' + game.id.to_s]) %>
+<% game.averageRoadScore = Prediction.average(:roadPrediction, :conditions => ['game_id = ' + game.id.to_s]) %>
 <p><b>Average User Prediction:</b> <%= game.road.name %> : <%= game.averageRoadScore %> - <%= game.home.name %> : <%= game.averageHomeScore %></p>
-<% if Prediction.find_by_game_id_and_user_id(game.id, current_user.id).nil? == true %>
+<% if Prediction.find_by_game_id_and_user_id(game.id, current_user.id).nil? == true && game.active == true %>
 <%=link_to 'Add Your Prediction Now!', new_prediction_path(:id => game.id)%>	
-<% else %>
+<% else  if Prediction.find_by_game_id_and_user_id(game.id, current_user.id).nil? == false %>
 	<p style="color: #0000FF; font-size: 15pt"><b>Your prediction: </b><%= game.road.name %> : <%= Prediction.find_by_game_id_and_user_id(game.id, current_user.id).roadPrediction %> - <%= game.home.name %> : <%= Prediction.find_by_game_id_and_user_id(game.id, current_user.id).homePrediction %> </p> 
+	<% end %>
 <% end   %>
 </div>
 </td>
 </tr>
+<tr><td colspan=3 align="center">
+<% if Prediction.find_by_game_id_and_user_id(game.id, current_user.id).nil? == false && game.active == false  %>
+	<%if Prediction.find_by_game_id_and_user_id(game.id, current_user.id).success = true %>
+	<p style="color: #00EEGG; font-size: 15pt">You correctly predicted the winner. You were off by a net of <%= Prediction.find_by_game_id_and_user_id(game.id, current_user.id).difference %> points</p>
+	<%else%>
+	<p style="color: #00EEGG; font-size: 15pt">You incorrectly predicted the winner. You were off by <%= Prediction.find_by_game_id_and_user_id(game.id, current_user.id).difference %></p>
+	<% end %>
+<% end %>
+</td></tr>
 <tr>
 <td colspan=3 align="center">
+<% if game.active == false %>
 <h3>Game Over: Final Score</h3>
+<% end %>
 </td>
 </tr>
+
 <tr>
 <td>
 <p><%= game.home.name %> : <%= game.actualHomeScore %></p>
@@ -52,10 +66,12 @@
 </td>
 <td>
 <p><%= game.road.name %> : <%= game.actualRoadScore %></p>
+
 </td>
 </tr>
-</table>
+<tr><td colspan=3><br/><br/><br/></td></tr>
 <% end %>
+</table>
   
   
   

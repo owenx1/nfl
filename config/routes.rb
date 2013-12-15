@@ -1,4 +1,7 @@
 Nfl::Application.routes.draw do
+  resources :predicts
+
+
   resources :predictions
 
 
@@ -39,7 +42,15 @@ match '/admin' => 'site#admin'
 
 match '/myprofile' => 'profiles#myprofile'
 
+match '/predictnow', :controller=>'predicts', :action=>'quickpredict'
 
+match '/validate', :controller=>'predicts', :action=>'predictnow'
+
+match '/deactivate', :controller=>'games', :action=>'deactivate'
+
+match '/updateall', :controller=>'predictions', :action=>'updateall'
+
+match '/addrankings', :controller=>'predictions', :action=>'addrankings'
   resources :teams
 
 

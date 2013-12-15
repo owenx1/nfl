@@ -1,10 +1,19 @@
 Nfl::Application.routes.draw do
+  resources :predicts
+
+
+  resources :predictions
+
+
+  resources :games
+
+
   resources :profiles
 
 
   devise_for :users
 
-  get "site/myprofile"
+  get "site/profile"
 
   get "site/predictor"
 
@@ -26,14 +35,20 @@ Nfl::Application.routes.draw do
 match '/contact' => 'site#contact'
 match '/home' => 'site#home'
 
-  match '/myprofile' => 'profiles#myprofile'
+  match '/profile' => 'site#profile'
 match '/predictor' => 'site#predictor'
 match '/leaderboard' => 'site#leaderboard'
 match '/admin' => 'site#admin'
 
 match '/myprofile' => 'profiles#myprofile'
 
+match '/predictnow', :controller=>'predicts', :action=>'quickpredict'
 
+match '/validate', :controller=>'predicts', :action=>'predictnow'
+
+match '/deactivate', :controller=>'games', :action=>'deactivate'
+
+match '/updateall', :controller=>'predictions', :action=>'updateall'
   resources :teams
 
 

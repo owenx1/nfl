@@ -4,6 +4,8 @@ gem 'rails', '3.2.14'
 
 gem 'devise', '2.1.2'
 
+gem 'sportspredict', '0.0.0'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

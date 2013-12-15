@@ -1,0 +1,19 @@
+<% form_for :game, :url => {:action => 'update_gamess'} do -%>
+  <table>
+    <tr>
+      <th>Current</th>
+      <th>Publication date</th>
+      <th>Name</th>
+    </tr>
+    <% @reports.each do |report| %>
+      <% fields_for "report[]", report do |report_fields| %>
+    <tr>
+      <td><%= report_fields.check_box :actualHomeScore %></td>
+      <td><%= report_fields.date_select :actualRoadScore %></td>
+      
+    </tr>
+      <% end %>
+    <% end %>
+  </table>
+ <%= submit_tag 'Update' %>
+<% end %>

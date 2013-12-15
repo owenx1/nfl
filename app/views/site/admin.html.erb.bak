@@ -1,2 +1,30 @@
-<h1>Admin Control Panel</h1>
-<p><%= link_to "Deactivate", :controller => "game", :action => "deactivate" %></p>
+<h1 align="center">Admin Control Panel</h1>
+<table align="center"><tr><td>
+<h3>Deactivate all games now</h3>
+<p><%= link_to "Deactivate", :controller => "games", :action => "deactivate" %></p>
+<br/>
+</tr></td>
+<tr><td>
+<h3>Update games view to show successful/unsuccessful predictions</h3>
+<p><%= link_to "Update predictions", :controller => "predictions", :action => "updateall" %></p>
+<br/>
+</tr></td>
+<tr><td>
+<h3>Update end of week rankings</h3>
+<p><%= link_to "AddRankings", :controller => "predictions", :action => "addrankings" %></p>
+<br/>
+</tr></td>
+<tr><td>
+<h3>View all predictions in system</h3>
+<a href="/predictions">All Predictions</a>
+<br/>
+</tr></td>
+<tr><td>
+<h3>Generate latest Games CSV file</h3>
+<a href="/Games.csv">Generate CSV</a>
+<br/>
+</tr></td></table>
+
+
+<!-- add link to csv, add link to view predictions-->
+

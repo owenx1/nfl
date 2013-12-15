@@ -1,0 +1,10 @@
+class CreatePredicts < ActiveRecord::Migration
+  def change
+    create_table :predicts do |t|
+      t.reference :team1
+      t.reference :team2
+
+      t.timestamps
+    end
+  end
+end

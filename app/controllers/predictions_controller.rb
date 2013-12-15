@@ -10,6 +10,55 @@ class PredictionsController < ApplicationController
     end
   end
 
+    def updateall
+  Prediction.all.entries.each do |prediction|
+    #prediction.success = 0
+	 #for prediction in Prediction.all
+  #prediction.success = true
+  name = Game.find_by_id(prediction.game_id)
+  home = Game.find_by_id(prediction.game_id).actualHomeScore 
+  road = Game.find_by_id(prediction.game_id).actualRoadScore
+  diff = (home + road) - (prediction.homePrediction + prediction.roadPrediction)
+
+  if home > road
+  Prediction.update_all("success = 1, difference = " + diff.abs.to_s, 
+                   ["Homeprediction > Roadprediction and id  =" + prediction.id.to_s])
+  else
+	if road > home
+  Prediction.update_all("success = 1, difference =" + diff.abs.to_s,
+                   ["Homeprediction < Roadprediction and id  =" + prediction.id.to_s])
+    end
+  end
+
+  end
+ end
+
+
+  def addrankings
+	User.all.entries.each do |user|
+	
+	total = Prediction.sum(:difference, :conditions => ['user_id = ' + user.id.to_s])
+	noOfPredictions = Prediction.count(:difference, :conditions => ['user_id = ' + user.id.to_s])
+	
+	if noOfPredictions > 0
+	rank = total / noOfPredictions
+	Profile.update_all("rank = " + rank.to_s,
+                   ["id  =" + user.id.to_s])
+
+		#Profile.find_by_user_id(user.id).rank = total / noOfPredictions
+	end
+	#User.update_all("rank = " + rank.to_s,
+     #              ["id  =" + user.id.to_s])
+
+
+		
+	
+
+	 
+	
+	end
+  end
+
   # GET /predictions/1
   # GET /predictions/1.json
   def show
